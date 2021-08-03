@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+
+        <form method="POST">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Account Details</h1>
+                <p class="lg:w-2/3 text-xl mx-auto leading-relaxed text-base">Edit account details using the form below.
+                </p>
+            </div>
+
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+
+                <div class="flex flex-wrap -m-2">
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full bg-gray-300 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                value="{{user.email}}" required disabled>
+                        </div>
+                    </div>
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="date" class="leading-7 text-sm text-gray-600">Date</label>
+                            <input type="text" id="date" name="date"
+                                class="w-full bg-gray-300 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                value="{{user.date}}" required disabled>
+                        </div>
+                    </div>
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="username" class="leading-7 text-sm text-gray-600">Username</label>
+                            <input type="text" id="username" name="username"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                value="{{user.username}}" required>
+                        </div>
+                    </div>
+
+
+                    <div class="p-2 w-full">
+                        <a href="">
+                            <button type="submit"
+                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Update
+                                Account</button>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<hr>
+
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Advanced Options</h1>
+            <p class="mb-8 leading-relaxed text-2xl">
+                In this section there are some advanced account options . You can edit password and
+                <strong>delete</strong> your account. If you delete your account all the passwords you saved will be
+                removed from
+                our database and you will never be able to access it again at any cost.
+            </p>
+
+
+
+            <h1 class="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-900">Change Password</h1>
+            <p class="mb-8 leading-relaxed text-2xl">
+                If you delete your account you will never be able to access your passwords and data again . This is not
+                recommended
+            </p>
+            <div class="flex justify-center pb-10">
+
+                <a href="/change_password">
+                    <button
+                        class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Change</button>
+                </a>
+
+            </div>
+
+
+
+            <h1 class="title-font sm:text-3xl text-2xl mb-4 font-medium text-red-500">Delete Account</h1>
+            <p class="mb-8 leading-relaxed text-2xl text-red-500">
+                If you delete your account you will never be able to access your passwords and data again . This is not
+                recommended
+            </p>
+            <div class="flex justify-center">
+
+                <a href="/delete_account">
+                    <button
+                        class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Delete</button>
+                </a>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

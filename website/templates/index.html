@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{settings.title}}</h1>
+            <p class="mb-8 leading-relaxed text-2xl">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum maiores quaerat corrupti magnam id!
+                Ipsam debitis error repellendus id nihil dicta obcaecati ea ex tenetur voluptatum commodi vitae esse,
+                fugit dolorum sint, consequatur inventore nam libero natus fuga expedita, unde tempora iusto. Soluta,
+                magni? Adipisci ab maiores ea laborum natus.
+            </p>
+            <p class="mb-8 leading-relaxed text-2xl">
+                Developer - <strong>DevXurde</strong>
+            </p>
+
+            <div class="flex justify-center">
+                <a href="/login">
+                    <button
+                        class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login</button>
+                </a>
+                <a href="/register">
+                    <button
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Register</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="text-gray-600 body-font">
+    <div class="container px-1 py-24 mx-auto">
+        <div class="text-center mb-20">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Features</h1>
+            <p class="mb-8 text-2xl">Take a look at some of the features of {{settings.title}}</p>
+        </div>
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-0 -mx-2">
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium">User Friendly</span>
+                </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium">Free</span>
+                </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium">Elegant UI</span>
+                </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium">Privacy</span>
+                </div>
+            </div>
+
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                        <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium">Safe</span>
+                </div>
+            </div>
+
+        </div>
+        <a href="/register">
+            <button
+                class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get
+                Started</button>
+        </a>
+    </div>
+</section>
+
+<hr>
+
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div class="text-center lg:w-1/2 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Developer - DevXurde</h1>
+            <p class="mb-8 text-2xl">
+                Hello there ! I am DevXurde , a python and backend developer . I have contributed in several open source
+                projects and also have a few repositories on github . Follow me on <a target="blank"
+                    class="text-indigo-500" href="https://www.github.com/DevXurde">Github</a>
+            </p>
+            <div class="flex justify-center">
+                <a href="">
+                    <button
+                        class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login</button>
+                </a>
+                <a href="/register">
+                    <button
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Register</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

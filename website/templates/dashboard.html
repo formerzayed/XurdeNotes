@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block more_links %}
+<a href="#save" class="mr-5 hover:text-gray-900">Add Notes</a>
+<a href="#view" class="mr-5 hover:text-gray-900">View Notes</a>
+{% endblock more_links %}
+
+{% block content %}
+<section id="save" class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+
+        <form method="POST">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Add Notes</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-2xl">
+                    You can add notes using the form below
+                </p>
+            </div>
+
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+
+                <div class="flex flex-wrap -m-2">
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="url" class="leading-7 text-sm text-gray-600">Title</label>
+                            <input type="text" id="title" name="title"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="password" class="leading-7 text-sm text-gray-600">Description</label>
+                            <textarea type="text" id="description" name="description"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                required>
+                            </textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="p-2 w-full">
+                        <a href="">
+                            <button type="submit"
+                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add</button>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<hr>
+
+{% if data|length == 0 %}
+
+<section id="view" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">No Notes Found , Save One
+                From The Form Above.</h1>
+            <a href="#save">
+                <button
+                    class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Add</button>
+            </a>
+        </div>
+    </div>
+</section> 
+
+{% else %}
+
+<section id="view" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">View Note</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-2xl">
+                You Can View All Your Notes Below
+            </p>
+        </div>
+
+        <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+            <table class="table-auto w-full text-left whitespace-no-wrap">
+                <thead>
+                    <tr>
+                        <th
+                            class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
+                            Title</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                            Description</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                            Date</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                            Edit</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                            Delete</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for password in data %}
+
+                    <tr>
+                        <td class="px-4 py-3">{{password.url}}</td>
+                        <td class="px-4 py-3">{{password.username}}</td>
+                        <td class="px-4 py-3">{{password.email}}</td>
+                        <td class="px-4 py-3 text-lg text-gray-900">{{password.password}}</td>
+
+                        <td class="w-10 text-center">
+                            <a href="/edit/{{password.id}}">
+                                <button
+                                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Edit
+                                </button>
+                            </a>
+                        </td>
+
+                        <td class="w-10 text-center">
+                            <a href="/delete/{{password.id}}">
+                                <button
+                                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Delete
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+
+{% endblock content %}
