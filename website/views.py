@@ -10,6 +10,5 @@ settings = open_settings()
 
 # Home page
 @views.route("/")
-@login_required
 def home():
     return render_template("index.html", settings=settings, user=current_user)

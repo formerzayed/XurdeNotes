@@ -38,8 +38,8 @@ def login():
                 return redirect(url_for("auth.login"))
             
         else:
-            flash(f"No user with email {user.email}", category="error")
-            return
+            flash(f"No user with email {email}", category="error")
+            # return redirect(url_for)
 
     return render_template("login.html", settings=settings, user=current_user)
 
@@ -64,8 +64,14 @@ def register():
         if user_check:
             flash("Email already exists!", category="error")
 
+        elif "@" not in email:
+            flash("Not a valid email!", category="error")
+
         elif confirm_password != password:
             flash("Passwords do not match", category="error")
+
+        elif len(password)<8:
+            flash("Password must be of more than 8 letters", category="error") 
 
         else:
             add_user = User(
