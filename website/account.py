@@ -1,4 +1,3 @@
-from os import terminal_size
 from flask import Blueprint, redirect, render_template, url_for, request, flash
 from . import open_settings, db
 from flask_login import current_user, login_required
