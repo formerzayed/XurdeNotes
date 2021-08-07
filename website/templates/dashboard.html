@@ -59,7 +59,7 @@
 
 <hr>
 
-{% if notes|length == 0 %}
+{% if user.notes|length == 0 %}
 
 <section id="view" class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
@@ -106,7 +106,7 @@
 
                 <tbody>
 
-                    {% for note in notes %}
+                    {% for note in user.notes %}
 
                     <tr>
                         <td class="px-4 py-3">{{note.title}}</td>

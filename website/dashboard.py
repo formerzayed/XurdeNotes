@@ -1,8 +1,7 @@
-from website.auth import login
 from flask import Blueprint, render_template, redirect, request, url_for, flash
 from . import open_settings, db
 from flask_login import current_user, login_required
-from .models import Note, User
+from .models import Note
 
 # dahboard-blueprint
 dashboard = Blueprint(name="dashboard", import_name=__name__)
@@ -26,7 +25,7 @@ def notes():
             flash("Please enter the description", category="error")
 
         else:
-            add_note = Note(title=title, description=description)
+            add_note = Note(title=title, description=description, user_id=current_user.id)
             db.session.add(add_note)
             db.session.commit()
 
@@ -53,7 +52,7 @@ def edit_note(id):
             flash("Please enter the description", category="error")
 
         else:
-            if note.first():
+            if note.first() and note.first().user_id == current_user.id:
                 try:
                     note.update(
                         dict(
@@ -79,7 +78,7 @@ def edit_note(id):
 def delete_note(id):
     note = Note.query.filter_by(id=id).first()
     
-    if note:
+    if note and note.user_id == current_user.id:
         try:
             db.session.delete(note)
             db.session.commit()
