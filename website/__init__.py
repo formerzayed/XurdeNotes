@@ -16,6 +16,12 @@ def open_settings():
     
     return settings
 
+settings = open_settings()
+
+# Host, Port
+host = settings["host"]
+port = settings["port"]
+
 # Creating app
 def create_app():
     app = Flask(__name__)
@@ -23,6 +29,8 @@ def create_app():
     app.config["SECRET_KEY"] = "wjdnwjnd ddwdwdwd"
     # Database URI
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_name}"
+    # Server Name
+    app.config["SERVER_NAME"] = f"{host}:{port}"
 
     db.init_app(app)
 
