@@ -12,7 +12,7 @@ Take a look at some features of XurdeNotes
 ## How to use?
 First you need to clone the repository
 ```bash
-git clone https://github.com/DevXurde/XurdeNotes.git
+git clone https://github.com/ZayedMalick/XurdeNotes.git
 ```
 Change directory
 ```bash
